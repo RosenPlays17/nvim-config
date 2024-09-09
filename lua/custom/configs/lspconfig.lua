@@ -21,7 +21,10 @@ lspconfig.pyright.setup({
 lspconfig.phpactor.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {"php"}
+  filetypes = {"php"},
+  root_dir = function()
+    return vim.loop.cwd()
+  end,
 })
 lspconfig.emmet_ls.setup({
   on_attach = on_attach,
